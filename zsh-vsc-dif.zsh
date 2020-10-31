@@ -1,49 +1,4 @@
 PLUGIN_LOCATION=${0:A:h}
-LIST_OF_FILE_EXTS=("
-    c 
-    cc  
-    class 
-    clj 
-    cpp 
-    cs 
-    cxx 
-    diff 
-    el        
-    go 
-    h 
-    htm
-    html 
-    java 
-    js 
-    js 
-    json 
-    l
-    log 
-    m 
-    m4 
-    md 
-    patch 
-    php 
-    pl 
-    po 
-    py 
-    rb 
-    rs 
-    rtf 
-    sh 
-    swift
-    svg 
-    ts 
-    ts 
-    tsx 
-    txt 
-    ua 
-    vb 
-    vcxproj 
-    xcodeproj 
-    xml 
-    yml 
-")   
 
 function dif() {
     if [ "$1" = "delete" ]; then 
@@ -56,9 +11,9 @@ function dif() {
         exit
     fi
  
-    if [[ " ${LIST_OF_FILE_EXTS[@]} " =~ " $1 " ]]; then
-        touch $PLUGIN_LOCATION/dif1.$1  $PLUGIN_LOCATION/dif2.$1 
-        code --diff $PLUGIN_LOCATION/dif1.$1 $PLUGIN_LOCATION/dif2.$1
+    if [[ "$1" == .* ]]; then
+        touch $PLUGIN_LOCATION/dif1$1  $PLUGIN_LOCATION/dif2$1 
+        code --diff $PLUGIN_LOCATION/dif1$1 $PLUGIN_LOCATION/dif2$1
         exit
     fi
 

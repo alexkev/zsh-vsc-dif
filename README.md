@@ -8,12 +8,15 @@ A local difftool. This plugin extends upon vscode's intregated difftool by dynam
 
 ## Features
 
-| Command               | Action                                   |
-| :-------------------- | :--------------------------------------- |
-| `dif`                 | loads & compares files: dif1 & dif2      |
-| `dif foo.ext`         | creates/loads existing file with same file extention as foo.ext and compares files |
-| `dif foo.ext bar.ext` | compares files                           |                                                                        
+| Command                   | Action                                                |
+| :------------------------ | :---------------------------------------------------- |
+| `dif`                     | creates/loads & compares files: dif1.txt & dif2.txt   |
+| `dif .ext`                | creates/loads & compares files: dif1.ext & dif2.ext   |
+| `dif ~/foo.ext`           | creates/loads existing file with same file extention as foo.ext and compares files |
+| `dif ~/foo.ext ~/bar.ext` | compares files                                        |                                                                        
+| `dif delete`              | deletes all generated files                           |                                                                        
 
+.ext refers to the file extention (ex: .js .txt .json etc.)
 
 ## Requiremnets
 - [Visual Studio Code](https://code.visualstudio.com/)
