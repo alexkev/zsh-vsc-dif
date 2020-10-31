@@ -46,6 +46,10 @@ LIST_OF_FILE_EXTS=("
 ")   
 
 function dif() {
+    if [ "$1" = "delete" ]; then 
+        exec mv dif* ~/.Trash 
+    fi 
+
     if [ $# -eq 0 ]; then
         touch $PLUGIN_LOCATION/dif1.txt  $PLUGIN_LOCATION/dif2.txt 
         code --diff $PLUGIN_LOCATION/dif1.txt $PLUGIN_LOCATION/dif2.txt 
